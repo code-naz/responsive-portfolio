@@ -197,50 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animatedElements.forEach(el => animationObserver.observe(el));
 
-  // 8. Mobile Bottom Sheet Menu Control Logic
-  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-  const bottomSheet = document.getElementById("bottom-sheet");
-  const bottomSheetOverlay = document.getElementById("bottom-sheet-overlay");
-  const mobileSheetLinks = document.querySelectorAll(".mobile-sheet-link");
-
-  if (mobileMenuBtn && bottomSheet && bottomSheetOverlay) {
-    const openBottomSheet = () => {
-      bottomSheetOverlay.classList.remove("hidden");
-      setTimeout(() => {
-        bottomSheetOverlay.classList.add("opacity-100");
-        bottomSheet.classList.remove("translate-y-full");
-        bottomSheet.classList.add("translate-y-0");
-      }, 10);
-    };
-
-    const closeBottomSheet = () => {
-      bottomSheetOverlay.classList.remove("opacity-100");
-      bottomSheet.classList.remove("translate-y-0");
-      bottomSheet.classList.add("translate-y-full");
-      setTimeout(() => {
-        bottomSheetOverlay.classList.add("hidden");
-      }, 300);
-    };
-
-    mobileMenuBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (bottomSheet.classList.contains("translate-y-full")) {
-        openBottomSheet();
-      } else {
-        closeBottomSheet();
-      }
-    });
-
-    bottomSheetOverlay.addEventListener("click", closeBottomSheet);
-
-    mobileSheetLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        closeBottomSheet();
-      });
-    });
-  }
-
-  // 9. Back-to-Top Interaction Logic
+  // 8. Back-to-Top Interaction Logic
   const backToTopBtn = document.getElementById("back-to-top-btn");
   if (backToTopBtn) {
     backToTopBtn.addEventListener("click", (e) => {

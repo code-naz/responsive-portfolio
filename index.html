@@ -279,37 +279,30 @@
 
   </main>
 
-  <nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-zinc-200/80 rounded-full px-5 py-3 flex gap-6 items-center z-50 shadow-xl shadow-zinc-200/50 text-zinc-600 select-none">
-    <a href="#about" class="hover:text-emerald-600 transition-colors flex items-center justify-center" aria-label="Home">
-      <i data-lucide="home" class="w-5 h-5"></i>
-    </a>
-    <button id="mobile-menu-btn" class="hover:text-emerald-600 transition-colors flex items-center justify-center cursor-pointer bg-transparent border-0 p-0" aria-label="Menu">
-      <i data-lucide="menu" class="w-5 h-5"></i>
-    </button>
-    <a href="#" id="back-to-top-btn" class="hover:text-emerald-600 transition-colors flex items-center justify-center" aria-label="Back to top">
-      <i data-lucide="chevron-up" class="w-5 h-5"></i>
-    </a>
-  </nav>
-
-  <div id="bottom-sheet" class="md:hidden fixed inset-x-0 bottom-0 bg-white border-t border-zinc-200/80 rounded-t-3xl shadow-2xl z-45 transform translate-y-full transition-transform duration-300 ease-out pb-28 pt-6 px-4">
-    <div class="w-12 h-1 bg-zinc-200 rounded-full mx-auto mb-6"></div>
-    <div class="grid grid-cols-3 gap-2 w-full">
-      <a href="#experience" class="mobile-sheet-link flex flex-row items-center justify-center gap-1.5 py-3 px-1 border border-zinc-200 rounded-xl bg-zinc-50/50 hover:bg-emerald-50 hover:border-emerald-500/30 hover:text-emerald-600 text-zinc-700 transition-all duration-200 whitespace-nowrap">
-        <i data-lucide="flask-conical" class="w-3.5 h-3.5 text-zinc-500 shrink-0"></i>
-        <span class="text-xs font-semibold">Experience</span>
+  <nav class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-xl border-t border-zinc-200/80 pt-3 pb-2.5 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] text-zinc-600 select-none">
+    <div class="max-w-275 mx-auto flex justify-center items-center gap-6 w-full">
+      <a href="#about" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-14" aria-label="Home">
+        <i data-lucide="home" class="w-5 h-5"></i>
+        <span class="text-[10px] font-medium mt-1 tracking-wide">Home</span>
       </a>
-      <a href="#projects" class="mobile-sheet-link flex flex-row items-center justify-center gap-1.5 py-3 px-1 border border-zinc-200 rounded-xl bg-zinc-50/50 hover:bg-emerald-50 hover:border-emerald-500/30 hover:text-emerald-600 text-zinc-700 transition-all duration-200 whitespace-nowrap">
-        <i data-lucide="folder-search" class="w-3.5 h-3.5 text-zinc-500 shrink-0"></i>
-        <span class="text-xs font-semibold">Projects</span>
+      <a href="#experience" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-16" aria-label="Experience">
+        <i data-lucide="flask-conical" class="w-5 h-5"></i>
+        <span class="text-[10px] font-medium mt-1 tracking-wide">Experience</span>
       </a>
-      <a href="#contact" class="mobile-sheet-link flex flex-row items-center justify-center gap-1.5 py-3 px-1 border border-zinc-200 rounded-xl bg-zinc-50/50 hover:bg-emerald-50 hover:border-emerald-500/30 hover:text-emerald-600 text-zinc-700 transition-all duration-200 whitespace-nowrap">
-        <i data-lucide="user-round" class="w-3.5 h-3.5 text-zinc-500 shrink-0"></i>
-        <span class="text-xs font-semibold">Contact</span>
+      <a href="#projects" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-14" aria-label="Projects">
+        <i data-lucide="folder-search" class="w-5 h-5"></i>
+        <span class="text-[10px] font-medium mt-1 tracking-wide">Projects</span>
+      </a>
+      <a href="#contact" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-14" aria-label="Contact">
+        <i data-lucide="user-round" class="w-5 h-5"></i>
+        <span class="text-[10px] font-medium mt-1 tracking-wide">Contact</span>
+      </a>
+      <a href="#" id="back-to-top-btn" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-12" aria-label="Back to top">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+        <span class="text-[10px] font-medium mt-1 tracking-wide">Top</span>
       </a>
     </div>
-  </div>
-
-  <div id="bottom-sheet-overlay" class="md:hidden fixed inset-0 bg-black/20 backdrop-blur-xs z-40 hidden opacity-0 transition-opacity duration-300"></div>
+  </nav>
 
   <div id="lightbox-modal" class="fixed inset-0 bg-white/95 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300 opacity-0 select-none">
     <button id="lightbox-close" class="absolute top-6 right-6 p-2 text-zinc-500 hover:text-zinc-900 transition-colors cursor-pointer" aria-label="Close Lightbox">
