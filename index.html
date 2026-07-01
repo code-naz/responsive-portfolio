@@ -18,10 +18,8 @@
 </head>
 <body class="bg-white text-zinc-800 font-sans antialiased min-h-screen overflow-x-hidden relative">
 
-  <!-- SLIMMED STANDARD SCROLL PROGRESS BAR -->
   <div id="scroll-progress" class="fixed top-0 left-0 h-0.5 bg-emerald-600 z-50 transition-all duration-100" style="width: 0%"></div>
 
-  <!-- FIXED DESKTOP NAVBAR -->
   <header class="hidden md:flex fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-zinc-100 z-40 py-5 justify-center items-center">
     <div class="max-w-275 w-full px-6 flex justify-between items-center">
       <a href="#" class="text-xl font-bold tracking-wider text-zinc-900">NAZ<span class="text-emerald-600">.</span></a>
@@ -34,27 +32,21 @@
     </div>
   </header>
 
-  <!-- MAIN WRAPPER (Strict 275 grid utility alignment) -->
   <main class="max-w-275 mx-auto px-6 space-y-20 md:space-y-32 pt-0 md:pt-12">
 
-    <!-- HERO SECTION -->
     <section id="about" class="pt-12 md:pt-24 pb-4 scroll-reveal">
       <div class="w-full space-y-12">
         
-        <!-- Top Row Container: Profile on Left, Text content on Right -->
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-12 w-full">
           
-          <!-- Left Side: Circular Profile Image Frame -->
           <div class="relative w-40 h-40 md:w-44 md:h-44 shrink-0">
             <div class="w-full h-full rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center overflow-hidden shadow-sm">
               <img src="assets/images/profile.jpg" alt="Naz" class="w-full h-full object-cover">
             </div>
           </div>
 
-          <!-- Right Side: Text Content, Role Metrics & Action Controls -->
           <div class="space-y-5 text-center sm:text-left grow w-full">
             
-            <!-- Metadata Location & Clock -->
             <div class="flex items-center justify-center sm:justify-start gap-3.5 text-xs text-zinc-500 font-medium tracking-wide select-none">
               <div class="flex items-center gap-1.5">
                 <i data-lucide="map-pin" class="w-3.5 h-3.5 text-zinc-400"></i>
@@ -69,19 +61,16 @@
 
             <h1 class="text-4xl font-black text-zinc-900 tracking-tight leading-none">Hi everyone!</h1>
             
-            <!-- Professional Role Inline Layout Container -->
             <div class="text-zinc-600 text-base md:text-lg leading-relaxed font-normal">
               <p>
                 I'm Nasrul. A <span id="typewriter" class="text-emerald-600 font-semibold border-r-2 border-emerald-600/80 pr-1 cursor-blink"></span>
               </p>
             </div>
 
-            <!-- Summary Text Paragraph -->
             <p class="text-zinc-600 text-sm md:text-base leading-relaxed max-w-xs sm:max-w-full mx-auto sm:mx-0 pt-1 text-justify sm:text-left">
               Passionate to developing software (web/apps) by designing intuitive and user-friendly UI/UX. Also interested in data analysis, uncovering new insights useful for individual or corporate growth.
             </p>
             
-            <!-- Call to Actions Container Row -->
             <div class="flex flex-row justify-center sm:justify-start gap-3 items-center w-full max-w-xs sm:max-w-none mx-auto pt-2">
               <a href="#experience" class="flex-1 sm:flex-initial border border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-5 py-2.5 rounded-xl font-semibold text-xs inline-flex items-center justify-center gap-2 group select-none active:scale-95 transition-all duration-150 whitespace-nowrap">
                 View Work
@@ -100,21 +89,17 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
     <section id="experience" class="space-y-8">
       
-      <!-- Centered Section Title Layout with Emerald Bottom Border Line -->
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Experience</h2>
       </div>
 
-      <!-- Carousel Container Wrapper Box -->
       <div class="relative w-full">
         
         <div class="overflow-hidden w-full rounded-2xl border border-zinc-200 bg-zinc-50/30">
           <div id="carousel-track" class="flex transition-transform duration-500 ease-out will-change-transform">
             
-            <!-- Slide 1 -->
             <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
               <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
                   <img src="assets/images/apple-dev.jpg" alt="Apple Developer Academy" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -131,7 +116,6 @@
               </div>
             </div>
 
-            <!-- Slide 2 -->
             <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
               <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
                   <img src="assets/images/satriamuda.jpg" alt="Satria Muda Review" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -148,7 +132,6 @@
               </div>
             </div>
 
-            <!-- Slide 3 -->
             <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
               <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
                 <img src="assets/images/sre-gid.jpg" alt="SRE Telkom University" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -168,23 +151,19 @@
           </div>
         </div>
 
-        <!-- Overlapping Right Edge Absolute Navigation Controllers -->
-        <div class="absolute right-0 lg:translate-x-1/2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center p-2">
-          <button id="prev-slide" class="hidden p-3 bg-white border border-zinc-200 rounded-xl text-zinc-500 hover:text-emerald-600 transition-all cursor-pointer active:scale-95 shadow-md" aria-label="Previous Slide">
-            <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          </button>
-          <button id="next-slide" class="p-3 bg-white border border-zinc-200 rounded-xl text-zinc-500 hover:text-emerald-600 transition-all cursor-pointer active:scale-95 shadow-md" aria-label="Next Slide">
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
+        <button id="prev-slide" class="absolute -left-4 lg:-translate-x-1/2 top-1/2 -translate-y-1/2 z-10 p-3 bg-white border border-zinc-200 rounded-xl text-zinc-500 hover:text-emerald-600 transition-all cursor-pointer active:scale-95 shadow-md hidden" aria-label="Previous Slide">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </button>
+
+        <button id="next-slide" class="absolute -right-4 lg:translate-x-1/2 top-1/2 -translate-y-1/2 z-10 p-3 bg-white border border-zinc-200 rounded-xl text-zinc-500 hover:text-emerald-600 transition-all cursor-pointer active:scale-95 shadow-md" aria-label="Next Slide">
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
 
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
     <section id="projects" class="space-y-8">
       
-      <!-- Centered Section Title Layout with Emerald Bottom Border Line -->
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Featured Projects</h2>
       </div>
@@ -230,10 +209,8 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="contact" class="space-y-8 pb-32">
       
-      <!-- Centered Section Title Layout with Emerald Bottom Border Line -->
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Let's Connect</h2>
       </div>
@@ -245,14 +222,13 @@
             Feel free to reach out or drop a direct message below.
           </p>
           
-          <!-- Social Row forced inline using flex-nowrap on all viewport breaks -->
           <div class="flex flex-row flex-nowrap gap-2 md:gap-3 items-center justify-center sm:justify-start w-full overflow-x-auto no-scrollbar py-1">
             <a href="https://instagram.com/naazrlh.go" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-emerald-600 transition-colors"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               <span class="text-xs font-bold">Instagram</span>
             </a>
 
-            <a href="https://linkedin.com/in/mh-nasrulloh" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group shrink-0">
+            <a href="https://linkedin.com/in/mh-nasrulloh" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-emerald-600 transition-colors"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
               <span class="text-xs font-bold">LinkedIn</span>
             </a>
@@ -266,7 +242,6 @@
           </div>
         </div>
 
-        <!-- Right Column: Recruitment Card -->
         <div class="flex items-center">
           <a href="mailto:mhnasrulloh.work@gmail.com" class="w-full bg-zinc-50 border border-zinc-200 hover:border-emerald-500/40 p-8 rounded-2xl flex flex-col justify-between items-start gap-5 group transition-all duration-300 active:scale-[0.99] shadow-sm">
             <div class="flex items-center gap-2.5">
@@ -296,7 +271,6 @@
 
   </main>
 
-  <!-- FLOATING MOBILE NAVIGATION BAR -->
   <nav class="md:hidden fixed bottom-10 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-zinc-200/80 rounded-full px-5 py-3 flex gap-4 items-center z-50 shadow-xl shadow-zinc-200/50 text-[11px] font-bold uppercase tracking-wider text-zinc-600 select-none">
     <a href="#about" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">About</a>
     <span class="w-px h-2.5 bg-zinc-200"></span>
@@ -307,7 +281,6 @@
     <a href="#contact" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Contact</a>
   </nav>
 
-  <!-- LIGHTBOX MODAL -->
   <div id="lightbox-modal" class="fixed inset-0 bg-white/95 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300 opacity-0 select-none">
     <button id="lightbox-close" class="absolute top-6 right-6 p-2 text-zinc-500 hover:text-zinc-900 transition-colors cursor-pointer" aria-label="Close Lightbox">
       <i data-lucide="x" class="w-8 h-8"></i>
@@ -319,7 +292,6 @@
 
   <script src="script.js"></script>
 
-  <!-- REFACTORED CAROUSEL SCRIPT WITH DYNAMIC SINGLE ACTIVE NAVIGATION CONTROLLER -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const track = document.getElementById("carousel-track");
@@ -332,17 +304,21 @@
       let currentIndex = 0;
 
       function updateCarouselState() {
-        // Move the carousel slide track
+        // Move slide container wrapper block
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        // Strict single button conditional filter rule
-        if (currentIndex === slides.length - 1) {
-          // At the last image slide: switch exclusively to Previous action button
+        // Strict split edge controller alignment configuration rules
+        if (currentIndex === 0) {
+          // Slide 1: Show Next on right edge, Hide Previous
+          prevBtn.classList.add("hidden");
+          nextBtn.classList.remove("hidden");
+        } else if (currentIndex === slides.length - 1) {
+          // Last Slide: Show Previous on left edge, Hide Next
           prevBtn.classList.remove("hidden");
           nextBtn.classList.add("hidden");
         } else {
-          // On all slides preceding the last view: display Next action button exclusively
-          prevBtn.classList.add("hidden");
+          // Middle Slides: Show Both simultaneously (Prev on left edge, Next on right edge)
+          prevBtn.classList.remove("hidden");
           nextBtn.classList.remove("hidden");
         }
       }
@@ -361,7 +337,7 @@
         }
       });
 
-      // Fire initial state presentation filter
+      // Fire script initialization layout evaluation pass
       updateCarouselState();
     });
   </script>
