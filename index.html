@@ -12,7 +12,6 @@
   <link rel="shortcut icon" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="dist/output.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   
@@ -29,10 +28,8 @@
 </head>
 <body class="bg-white text-zinc-800 font-sans antialiased min-h-screen overflow-x-hidden relative">
 
-  <!-- SLIMMED STANDARD SCROLL PROGRESS BAR -->
   <div id="scroll-progress" class="fixed top-0 left-0 h-0.5 bg-emerald-600 z-50 transition-all duration-100" style="width: 0%"></div>
 
-  <!-- FIXED DESKTOP NAVBAR -->
   <header class="hidden md:flex fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-zinc-100 z-40 py-5 justify-center items-center">
     <div class="max-w-275 w-full px-6 flex justify-between items-center">
       <a href="#" class="text-xl font-bold tracking-wider text-zinc-900">NAZ<span class="text-emerald-600">.</span></a>
@@ -45,27 +42,21 @@
     </div>
   </header>
 
-  <!-- MAIN WRAPPER (Strict 275 Grid System Metric Width Constraint) -->
   <main class="max-w-275 mx-auto px-6 space-y-20 md:space-y-32 pt-0 md:pt-12">
 
-    <!-- HERO SECTION -->
     <section id="about" class="pt-12 md:pt-24 pb-4 scroll-reveal">
       <div class="w-full space-y-12">
         
-        <!-- Top Row Container: Profile on Left, Text content on Right -->
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-12 w-full">
           
-          <!-- Left Side: Circular Profile Image Frame -->
           <div class="relative w-40 h-40 md:w-44 md:h-44 shrink-0">
             <div class="w-full h-full rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center overflow-hidden shadow-sm">
               <img src="assets/images/profile.jpg" alt="Naz" class="w-full h-full object-cover">
             </div>
           </div>
 
-          <!-- Right Side: Text Content, Role Metrics & Action Controls -->
           <div class="space-y-5 text-center sm:text-left grow w-full">
             
-            <!-- Metadata Location & Clock -->
             <div class="flex items-center justify-center sm:justify-start gap-3.5 text-xs text-zinc-500 font-medium tracking-wide select-none">
               <div class="flex items-center gap-1.5">
                 <i data-lucide="map-pin" class="w-3.5 h-3.5 text-zinc-400"></i>
@@ -80,19 +71,16 @@
 
             <h1 class="text-4xl font-black text-zinc-900 tracking-tight leading-none">Hi everyone!</h1>
             
-            <!-- Professional Role Inline Layout Container -->
             <div class="text-zinc-600 text-base md:text-lg leading-relaxed font-normal">
               <p>
                 I'm Nasrul. A <span id="typewriter" class="text-emerald-600 font-semibold border-r-2 border-emerald-600/80 pr-1 cursor-blink"></span>
               </p>
             </div>
 
-            <!-- Summary Text Paragraph -->
             <p class="text-zinc-600 text-sm md:text-base leading-relaxed max-w-xs sm:max-w-full mx-auto sm:mx-0 pt-1 text-justify sm:text-left">
               Passionate to developing software (web/apps) by designing intuitive and user-friendly interfaces. Also interested in data analysis, uncovering new insights useful for individual or corporate growth.
             </p>
             
-            <!-- Call to Actions Container Row -->
             <div class="flex flex-row justify-center sm:justify-start gap-3 items-center w-full max-w-xs sm:max-w-none mx-auto pt-2">
               <a href="#experience" class="flex-1 sm:flex-initial border border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-5 py-2.5 rounded-xl font-semibold text-xs inline-flex items-center justify-center gap-2 group select-none active:scale-95 transition-all duration-150 whitespace-nowrap">
                 View Work
@@ -111,21 +99,16 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
     <section id="experience" class="space-y-8">
       
-      <!-- Centered Section Title Layout with Emerald Bottom Border Line -->
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Experience</h2>
       </div>
 
-      <!-- Carousel Container Wrapper Box -->
       <div class="relative w-full overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50/30 p-0">
         
-        <!-- Smooth Scroll Track mapped to Touch Swipe Events -->
         <div id="carousel-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar w-full pb-10">
           
-          <!-- Slide 1 -->
           <div class="w-full shrink-0 snap-start p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
             <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
                 <img src="assets/images/apple-dev.jpg" alt="Apple Developer Academy" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -142,7 +125,6 @@
             </div>
           </div>
 
-          <!-- Slide 2 -->
           <div class="w-full shrink-0 snap-start p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
             <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
                 <img src="assets/images/satriamuda.jpg" alt="Satria Muda Review" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -159,7 +141,6 @@
             </div>
           </div>
 
-          <!-- Slide 3 -->
           <div class="w-full shrink-0 snap-start p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
             <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
               <img src="assets/images/sre-gid.jpg" alt="SRE Telkom University" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -178,7 +159,6 @@
 
         </div>
 
-        <!-- Instagram-style Rounded Pagination Dots Container -->
         <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20 transition-all duration-300">
           <span class="w-2 h-2 rounded-full bg-emerald-600 transition-all duration-300 select-none"></span>
           <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 transition-all duration-300 select-none"></span>
@@ -188,13 +168,11 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
     <section id="projects" class="space-y-8">
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Featured Projects</h2>
       </div>
 
-      <!-- Flipped Card Layout Grid: Title/Description on Top, Padding Inset Image at Bottom -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <a href="https://xuexi-hanzi.vercel.app" target="_blank" class="bg-white border border-zinc-200 rounded-2xl overflow-hidden group hover:border-emerald-500/40 hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 flex flex-col justify-between">
@@ -241,17 +219,14 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="contact" class="space-y-8 pb-32">
       
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Let's Connect</h2>
       </div>
 
-      <!-- Two-Column Container Grid System -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 items-stretch">
         
-        <!-- Left Column: Clean Emerald Border Container -->
         <div class="border border-emerald-600 rounded-2xl p-6 md:p-8 flex flex-col justify-center gap-4 bg-emerald-50/5 shadow-sm">
           <div class="flex flex-row items-center gap-2.5 select-none justify-center sm:justify-start">
             <span class="relative flex h-2.5 w-2.5 shrink-0">
@@ -262,14 +237,12 @@
               Ready for Work/Internship
             </span>
           </div>
-          <!-- Text description on emerald border set to justify for mobile symmetry -->
           <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed max-w-md text-justify sm:text-left mx-auto sm:mx-0">
             Open to roles across Software Development, UI/UX Design, Data Analyst, and Product Management. 
+          </p>
         </div>
 
-        <!-- Right Column: Recruiter Content Layout with Emerald Headline Alignment -->
         <div class="flex flex-col justify-between gap-5 p-2">
-          <!-- Headline changed to emerald color matching image visual rules -->
           <div class="space-y-3 text-justify sm:text-left max-w-md mx-auto sm:mx-0 w-full">
             <h3 class="text-base md:text-lg font-normal text-emerald-600 leading-snug">
               Have an opportunity? Just dm me now.
@@ -279,7 +252,6 @@
             </p>
           </div>
           
-          <!-- Symmetrical Grid System Rows to keep links compact and perfectly aligned -->
           <div class="grid grid-cols-3 gap-2 w-full max-w-md mx-auto sm:mx-0 py-1">
             
             <a href="https://linkedin.com/in/mh-nasrulloh" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-2 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group w-full text-center">
@@ -307,18 +279,38 @@
 
   </main>
 
-  <!-- FLOATING MOBILE NAVIGATION BAR -->
-  <nav class="md:hidden fixed bottom-10 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-zinc-200/80 rounded-full px-5 py-3 flex gap-4 items-center z-50 shadow-xl shadow-zinc-200/50 text-[11px] font-bold uppercase tracking-wider text-zinc-600 select-none">
-    <a href="#about" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">About</a>
-    <span class="w-px h-2.5 bg-zinc-200"></span>
-    <a href="#experience" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Experience</a>
-    <span class="w-px h-2.5 bg-zinc-200"></span>
-    <a href="#projects" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Projects</a>
-    <span class="w-px h-2.5 bg-zinc-200"></span>
-    <a href="#contact" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Contact</a>
+  <nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-zinc-200/80 rounded-full px-5 py-3 flex gap-6 items-center z-50 shadow-xl shadow-zinc-200/50 text-zinc-600 select-none">
+    <a href="#about" class="hover:text-emerald-600 transition-colors flex items-center justify-center" aria-label="Home">
+      <i data-lucide="home" class="w-5 h-5"></i>
+    </a>
+    <button id="mobile-menu-btn" class="hover:text-emerald-600 transition-colors flex items-center justify-center cursor-pointer bg-transparent border-0 p-0" aria-label="Menu">
+      <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+    <a href="#" id="back-to-top-btn" class="hover:text-emerald-600 transition-colors flex items-center justify-center" aria-label="Back to top">
+      <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </a>
   </nav>
 
-  <!-- LIGHTBOX MODAL -->
+  <div id="bottom-sheet" class="md:hidden fixed inset-x-0 bottom-0 bg-white border-t border-zinc-200/80 rounded-t-3xl shadow-2xl z-45 transform translate-y-full transition-transform duration-300 ease-out pb-28 pt-6 px-4">
+    <div class="w-12 h-1 bg-zinc-200 rounded-full mx-auto mb-6"></div>
+    <div class="grid grid-cols-3 gap-2 w-full">
+      <a href="#experience" class="mobile-sheet-link flex flex-row items-center justify-center gap-1.5 py-3 px-1 border border-zinc-200 rounded-xl bg-zinc-50/50 hover:bg-emerald-50 hover:border-emerald-500/30 hover:text-emerald-600 text-zinc-700 transition-all duration-200 whitespace-nowrap">
+        <i data-lucide="flask-conical" class="w-3.5 h-3.5 text-zinc-500 shrink-0"></i>
+        <span class="text-xs font-semibold">Experience</span>
+      </a>
+      <a href="#projects" class="mobile-sheet-link flex flex-row items-center justify-center gap-1.5 py-3 px-1 border border-zinc-200 rounded-xl bg-zinc-50/50 hover:bg-emerald-50 hover:border-emerald-500/30 hover:text-emerald-600 text-zinc-700 transition-all duration-200 whitespace-nowrap">
+        <i data-lucide="folder-search" class="w-3.5 h-3.5 text-zinc-500 shrink-0"></i>
+        <span class="text-xs font-semibold">Projects</span>
+      </a>
+      <a href="#contact" class="mobile-sheet-link flex flex-row items-center justify-center gap-1.5 py-3 px-1 border border-zinc-200 rounded-xl bg-zinc-50/50 hover:bg-emerald-50 hover:border-emerald-500/30 hover:text-emerald-600 text-zinc-700 transition-all duration-200 whitespace-nowrap">
+        <i data-lucide="user-round" class="w-3.5 h-3.5 text-zinc-500 shrink-0"></i>
+        <span class="text-xs font-semibold">Contact</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="bottom-sheet-overlay" class="md:hidden fixed inset-0 bg-black/20 backdrop-blur-xs z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
   <div id="lightbox-modal" class="fixed inset-0 bg-white/95 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300 opacity-0 select-none">
     <button id="lightbox-close" class="absolute top-6 right-6 p-2 text-zinc-500 hover:text-zinc-900 transition-colors cursor-pointer" aria-label="Close Lightbox">
       <i data-lucide="x" class="w-8 h-8"></i>
@@ -330,7 +322,6 @@
 
   <script src="script.js"></script>
 
-  <!-- INTEGRATED SCROLL-SNAP INDICATOR STATE CONTROLLER SCRIPT -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const track = document.getElementById("carousel-track");
@@ -348,7 +339,6 @@
         
         const activeIndex = Math.min(Math.round(scrollLeft / slideWidth), totalSlides - 1);
 
-        // Update active presentation states for Instagram post indicators
         dots.forEach((dot, idx) => {
           if (idx === activeIndex) {
             dot.className = "w-2 h-2 rounded-full bg-emerald-600 transition-all duration-300 select-none";
