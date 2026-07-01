@@ -37,29 +37,51 @@
   <!-- MAIN WRAPPER -->
   <main class="max-w-275 mx-auto px-6 space-y-20 md:space-y-32 pt-0 md:pt-12">
 
-    <!-- ABOUT SECTION (Mobile padding adjusted perfectly to pt-15) -->
-    <section id="about" class="pt-15 md:pt-40 pb-4 space-y-12 scroll-reveal">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- HERO SECTION -->
+    <section id="about" class="pt-12 md:pt-24 pb-4 scroll-reveal">
+      <div class="w-full space-y-12">
         
-        <!-- Left Profile Column -->
-        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 md:gap-8 w-full lg:col-span-7">
-          <div class="relative w-40 h-40 md:w-44 md:h-44 shrink-0 mx-auto sm:mx-0">
+        <!-- Top Row Container: Profile and Content Text Column Side-by-Side -->
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-12 w-full">
+          
+          <!-- Left Side: Circular Profile Image Frame -->
+          <div class="relative w-40 h-40 md:w-44 md:h-44 shrink-0">
             <div class="w-full h-full rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center overflow-hidden shadow-sm">
               <img src="assets/images/profile.jpg" alt="Naz" class="w-full h-full object-cover">
             </div>
           </div>
 
-          <div class="space-y-5 text-center sm:text-left grow">
+          <!-- Right Side: Text Content, Role Metrics & Action Controls -->
+          <div class="space-y-5 text-center sm:text-left grow w-full">
+            
+            <!-- Metadata Location & Clock -->
+            <div class="flex items-center justify-center sm:justify-start gap-3.5 text-xs text-zinc-500 font-medium tracking-wide select-none">
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-zinc-400"></i>
+                <span>Indonesia</span>
+              </div>
+              <span class="w-px h-3 bg-zinc-200"></span>
+              <div class="font-mono flex items-center gap-1.5">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-zinc-400"></i>
+                <span id="dashboard-clock">00:00:00 WIB</span>
+              </div>
+            </div>
+
             <h1 class="text-4xl font-black text-zinc-900 tracking-tight leading-none">Hi everyone!</h1>
             
+            <!-- Professional Role String Layout -->
             <div class="text-zinc-600 text-base md:text-lg leading-relaxed font-normal">
-              <p>I'm Nasrul. Informatics Student.</p>
-              <p class="min-h-12 sm:min-h-0 mt-1">
-                A <span id="typewriter" class="text-emerald-600 font-semibold border-r-2 border-emerald-600/80 pr-1 cursor-blink"></span>
+              <p>
+                I'm Nasrul. A <span id="typewriter" class="text-emerald-600 font-semibold border-r-2 border-emerald-600/80 pr-1 cursor-blink"></span>
               </p>
             </div>
+
+            <!-- Summary Text Paragraph (Constrained on mobile to max-w-xs to line up perfectly with the buttons) -->
+            <p class="text-zinc-600 text-sm md:text-base leading-relaxed max-w-xs sm:max-w-full mx-auto sm:mx-0 pt-1 text-justify sm:text-left">
+              Passionate about software development (web/apps) by designing intuitive and user-friendly UI/UX. Also interested in data analysis, uncovering new insights useful for individual or corporate growth.
+            </p>
             
-            <div class="flex flex-row justify-center sm:justify-start gap-3 items-center w-full max-w-xs sm:max-w-none mx-auto">
+            <div class="flex flex-row justify-center sm:justify-start gap-3 items-center w-full max-w-xs sm:max-w-none mx-auto pt-2">
               <a href="#experience" class="flex-1 sm:flex-initial border border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-5 py-2.5 rounded-xl font-semibold text-xs inline-flex items-center justify-center gap-2 group select-none active:scale-95 transition-all duration-150 whitespace-nowrap">
                 View Work
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200"></i>
@@ -71,160 +93,96 @@
               </a>
             </div>
           </div>
+
         </div>
 
-        <!-- Right Column: BENTO BOX -->
-        <div class="w-full lg:col-span-5 scroll-reveal delay-100">
-          <div class="bg-zinc-50/60 border border-zinc-200/80 rounded-2xl shadow-sm backdrop-blur-sm overflow-hidden">
-            
-            <!-- Metadata Location & Clock -->
-            <div class="grid grid-cols-2 gap-4 text-xs p-5 border-b border-zinc-200/60">
-              <div class="flex items-center gap-2 text-zinc-600">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-zinc-400"></i>
-                <span>Indonesia</span>
-              </div>
-              <div class="text-zinc-600 font-mono text-right flex items-center justify-end gap-1.5">
-                <i data-lucide="clock" class="w-3.5 h-3.5 text-zinc-400"></i>
-                <span id="dashboard-clock">00:00:00 WIB</span>
-              </div>
-            </div>
-
-            <!-- Core Tech Grid -->
-            <div class="p-5">
-              <div class="grid grid-cols-4 gap-2.5 select-none">
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-html5-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">HTML</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-javascript-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">JS</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-vuejs-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">Vue</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-react-original text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">React</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-nextjs-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">Next</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-tailwindcss-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">Tailwind</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-laravel-original text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">Laravel</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-python-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">Python</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-flutter-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">Flutter</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-cplusplus-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">C++</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-mysql-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">SQL</span>
-                </div>
-                <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
-                  <i class="devicon-git-plain text-xl text-emerald-600"></i>
-                  <span class="text-[8px] font-bold text-zinc-400 mt-1 tracking-wider uppercase">Git</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="space-y-8 scroll-reveal">
-      <div class="flex justify-between items-end">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-zinc-900">Experience</h2>
-          <p class="text-zinc-500 text-sm mt-1">My professional timeline history.</p>
+    <section id="experience" class="space-y-8">
+      
+      <!-- Centered Section Title Layout with Emerald Bottom Border Line -->
+      <div class="flex flex-col items-center text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Experience</h2>
+      </div>
+
+      <!-- Carousel Container Wrapper -->
+      <div class="relative w-full">
+        
+        <div class="overflow-hidden w-full rounded-2xl border border-zinc-200 bg-zinc-50/30">
+          <div id="carousel-track" class="flex transition-transform duration-500 ease-out will-change-transform">
+            
+            <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
+              <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
+                  <img src="assets/images/apple-dev.jpg" alt="Apple Developer Academy" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+              </div>
+              <div class="space-y-3 w-full">
+                <div>
+                  <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-1 rounded-full font-semibold">May 2026 - Present</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-zinc-900">Internnet Indonesia</h3>
+                  <p class="text-sm font-semibold text-zinc-600">Mentee Technology Path</p>
+                </div>
+                <p class="text-zinc-600 text-sm max-w-xl">Completed 2+ intensive mentorship sessions led by engineering professionals with focus on tech recruitment standard and specific path, Participated in an exclusive Company Visit to Apple Developer Academy @ UC Jakarta, theme "Exploring On-Device Intelligence on Apple Platform" to study local AI/ML integration and modern app architecture.</p>
+              </div>
+            </div>
+
+            <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
+              <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
+                  <img src="assets/images/satriamuda.jpg" alt="Satria Muda Review" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+              </div>
+              <div class="space-y-3 w-full">
+                <div>
+                  <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-1 rounded-full font-semibold">Jan - Oct 2025</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-zinc-900">Satria Muda</h3>
+                  <p class="text-sm font-semibold text-zinc-600">Reviewers</p>
+                </div>
+                <p class="text-zinc-600 text-sm max-w-xl">Served as a technical consultant and speaker of PKM Administration Class, Certified National Reviewer with score 910/1200 ("Highly Trusted"), and Lead of HIC Division on 3 month.</p>
+              </div>
+            </div>
+
+            <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
+              <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
+                <img src="assets/images/sre-gid.jpg" alt="SRE Telkom University" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+              </div>
+              <div class="space-y-3 w-full">
+                <div>
+                  <span class="text-xs text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full font-semibold">Jan - Dec 2024</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-zinc-900">Society of Renewable Energy (SRE)</h3>
+                  <p class="text-sm font-semibold text-zinc-600">Media Creative</p>
+                </div>
+                <p class="text-zinc-600 text-sm max-w-xl">Managed the official account @sre.telkomuniversitypwt, Created 30+ digital design and promotional feed, also coordinated with 3 other divisions as a documenter to secure event coverage and visual report.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div class="flex gap-2">
-          <button id="prev-slide" class="p-2 rounded-xl bg-white border border-zinc-200 hover:border-emerald-500 text-zinc-600 hover:text-emerald-600 transition-all cursor-pointer active:scale-95">
+
+        <!-- Single Unified Overlay Arrow Controller Component -->
+        <div class="absolute -right-2 lg:translate-x-1/2 top-1/2 -translate-y-1/2 z-10 flex flex-row items-center bg-white border border-zinc-200 rounded-xl shadow-md overflow-hidden divide-x divide-zinc-100">
+          <button id="prev-slide" class="p-3 text-zinc-500 hover:text-emerald-600 hover:bg-zinc-50/50 transition-all cursor-pointer active:scale-95" aria-label="Previous Slide">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
           </button>
-          <button id="next-slide" class="p-2 rounded-xl bg-white border border-zinc-200 hover:border-emerald-500 text-zinc-600 hover:text-emerald-600 transition-all cursor-pointer active:scale-95">
+          <button id="next-slide" class="p-3 text-zinc-500 hover:text-emerald-600 hover:bg-zinc-50/50 transition-all cursor-pointer active:scale-95" aria-label="Next Slide">
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
         </div>
-      </div>
 
-      <div class="overflow-hidden w-full rounded-2xl border border-zinc-200 bg-zinc-50/30">
-        <div id="carousel-track" class="flex transition-transform duration-500 ease-out will-change-transform">
-          
-          <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
-            <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
-                <img src="assets/images/apple-dev.jpg" alt="Apple Developer Academy" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
-            </div>
-            <div class="space-y-3 w-full">
-              <div>
-                <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-1 rounded-full font-semibold">May 2026 - Present</span>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-zinc-900">Internnet Indonesia</h3>
-                <p class="text-sm font-semibold text-zinc-600">Mentee Technology Path</p>
-              </div>
-              <p class="text-zinc-600 text-sm max-w-xl">Completed 2+ intensive mentorship sessions led by engineering professionals with focus on tech recruitment standard and specific path, Participated in an exclusive Company Visit to Apple Developer Academy @ UC Jakarta, theme "Exploring On-Device Intelligence on Apple Platform" to study local AI/ML integration and modern app architecture.</p>
-            </div>
-          </div>
-
-          <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
-            <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
-                <img src="assets/images/satriamuda.jpg" alt="Satria Muda Review" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
-            </div>
-            <div class="space-y-3 w-full">
-              <div>
-                <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2.5 py-1 rounded-full font-semibold">Jan - Content 2025</span>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-zinc-900">Satria Muda</h3>
-                <p class="text-sm font-semibold text-zinc-600">Reviewers</p>
-              </div>
-              <p class="text-zinc-600 text-sm max-w-xl">Served as a technical consultant and speaker of PKM Administration Class, Certified National Reviewer with score 910/1200 ("Highly Trusted"), and Lead of HIC Division on 3 month.</p>
-            </div>
-          </div>
-
-          <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
-            <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
-              <img src="assets/images/sre-gid.jpg" alt="SRE Telkom University" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
-            </div>
-            <div class="space-y-3 w-full">
-              <div>
-                <span class="text-xs text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full font-semibold">Jan - Dec 2024</span>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-zinc-900">Society of Renewable Energy (SRE)</h3>
-                <p class="text-sm font-semibold text-zinc-600">Media Creative</p>
-              </div>
-              <p class="text-zinc-600 text-sm max-w-xl">Managed the official account @sre.telkomuniversitypwt, Created 30+ digital design and promotional feed, also coordinated with 3 other divisions as a documenter to secure event coverage and visual report.</p>
-            </div>
-          </div>
-
-        </div>
       </div>
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" class="space-y-8 scroll-reveal">
-      <div>
-        <h2 class="text-2xl md:text-3xl font-bold text-zinc-900">Featured Projects</h2>
-        <p class="text-zinc-500 text-sm mt-1">A curated grid of my technical builds.</p>
+    <section id="projects" class="space-y-8">
+      
+      <!-- Centered Section Title Layout with Emerald Bottom Border Line -->
+      <div class="flex flex-col items-center text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Featured Projects</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -268,58 +226,71 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION (Acts as a clean space cushion at the bottom of the viewport) -->
-    <section id="contact" class="grid grid-cols-1 md:grid-cols-2 gap-12 pb-44 md:pb-32 scroll-reveal">
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="space-y-8 pb-32">
       
-      <div class="space-y-6">
-        <div class="space-y-3">
-          <h2 class="text-2xl md:text-3xl font-bold text-zinc-900">Let's Connect</h2>
-          <p class="text-zinc-600 leading-relaxed max-w-sm text-sm md:text-base">
-            Feel free to reach out or drop a direct message below.
-          </p>
-        </div>
-        
-        <div class="flex flex-row flex-wrap gap-3 items-center">
-          <a href="https://instagram.com/naazrlh.go" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-emerald-600 transition-colors"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            <span class="text-sm font-bold">Instagram</span>
-          </a>
-
-          <a href="https://linkedin.com/in/mh-nasrulloh" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-emerald-600 transition-colors"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-            <span class="text-sm font-bold">LinkedIn</span>
-          </a>
-        </div>
+      <!-- Centered Section Title Layout with Emerald Bottom Border Line -->
+      <div class="flex flex-col items-center text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Let's Connect</h2>
       </div>
 
-      <!-- Right Column: Recruitment Card -->
-      <div class="flex items-center">
-        <a href="mailto:mhnasrulloh.work@gmail.com" class="w-full bg-zinc-50 border border-zinc-200 hover:border-emerald-500/40 p-8 rounded-2xl flex flex-col justify-between items-start gap-5 group transition-all duration-300 active:scale-[0.99] shadow-sm">
-          
-          <div class="flex items-center gap-2.5">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span class="text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-0.5 rounded-full font-semibold tracking-wide">
-              Ready for Work/Internship
-            </span>
-          </div>
-
-          <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed max-w-md">
-            Open to roles across Software Development, UI/UX Design, Data Analyst, and Product Management. Excited to grow and contribute.
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-2">
+        
+        <div class="space-y-6">
+          <p class="text-zinc-600 leading-relaxed max-w-sm text-sm md:text-base text-center sm:text-left">
+            Feel free to reach out or drop a direct message below.
           </p>
+          
+          <!-- Social Row forced inline using flex-nowrap on all viewport breaks -->
+          <div class="flex flex-row flex-nowrap gap-2 md:gap-3 items-center justify-center sm:justify-start w-full overflow-x-auto no-scrollbar py-1">
+            <a href="https://instagram.com/naazrlh.go" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-emerald-600 transition-colors"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              <span class="text-xs font-bold">Instagram</span>
+            </a>
 
-          <div class="w-full border-t border-zinc-200/80 pt-4 flex justify-between items-center">
-            <p class="text-sm font-bold text-zinc-900 group-hover:text-emerald-600 transition-colors">
-              Send an Email Message
-            </p>
-            <div class="p-2 bg-white rounded-xl border border-zinc-200 text-zinc-600 group-hover:text-emerald-600 group-hover:border-emerald-600 transition-all">
-              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </div>
+            <a href="https://linkedin.com/in/mh-nasrulloh" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-emerald-600 transition-colors"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              <span class="text-xs font-bold">LinkedIn</span>
+            </a>
+
+            <a href="https://wa.me/6285701816674" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="text-zinc-400 group-hover:text-emerald-600 transition-colors">
+                <path d="M12.004 2c-5.518 0-10 4.482-10 10 0 1.761.461 3.415 1.266 4.861L2 22l5.312-1.393c1.411.77 3.012 1.21 4.692 1.21 5.518 0 10-4.482 10-10s-4.482-10-10-10zm.004 18c-1.539 0-2.99-.413-4.25-1.135l-.304-.173-3.153.827.84-3.076-.19-.303c-.79-1.258-1.213-2.722-1.213-4.24 0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.646-6.425c-.254-.127-1.503-.742-1.737-.827-.234-.085-.405-.127-.576.128-.171.254-.66.827-.808.996-.149.17-.297.19-.551.063-.254-.127-1.074-.396-2.046-1.264-.756-.674-1.266-1.508-1.414-1.762-.149-.254-.016-.391.111-.517.114-.114.254-.297.381-.445.127-.149.17-.254.254-.424.085-.17.042-.318-.021-.445-.064-.127-.576-1.393-.789-1.906-.207-.5-.421-.433-.576-.441-.149-.007-.32-.009-.491-.009-.171 0-.449.064-.684.318-.234.254-.897.877-.897 2.14 0 1.263.918 2.482 1.046 2.652.128.17 1.808 2.761 4.379 3.869.612.264 1.09.421 1.462.539.614.196 1.173.168 1.614.103.492-.072 1.503-.615 1.716-1.209.213-.593.213-1.102.149-1.208-.064-.107-.234-.149-.488-.277z"/>
+              </svg>
+              <span class="text-xs font-bold">WhatsApp</span>
+            </a>
           </div>
+        </div>
 
-        </a>
+        <!-- Right Column: Recruitment Card -->
+        <div class="flex items-center">
+          <a href="mailto:mhnasrulloh.work@gmail.com" class="w-full bg-zinc-50 border border-zinc-200 hover:border-emerald-500/40 p-8 rounded-2xl flex flex-col justify-between items-start gap-5 group transition-all duration-300 active:scale-[0.99] shadow-sm">
+            
+            <div class="flex items-center gap-2.5">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span class="text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-0.5 rounded-full font-semibold tracking-wide">
+                Ready for Work/Internship
+              </span>
+            </div>
+
+            <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed max-w-md">
+              Open to roles across Software Development, UI/UX Design, Data Analyst, and Product Management. Excited to grow and contribute.
+            </p>
+
+            <div class="w-full border-t border-zinc-200/80 pt-4 flex justify-between items-center">
+              <p class="text-sm font-bold text-zinc-900 group-hover:text-emerald-600 transition-colors">
+                Send an Email Message
+              </p>
+              <div class="p-2 bg-white rounded-xl border border-zinc-200 text-zinc-600 group-hover:text-emerald-600 group-hover:border-emerald-600 transition-all">
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </div>
+            </div>
+
+          </a>
+        </div>
       </div>
     </section>
 
