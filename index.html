@@ -16,10 +16,12 @@
   <link rel="stylesheet" href="dist/output.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-white text-zinc-800 font-sans antialiased min-h-screen overflow-x-hidden">
+<body class="bg-white text-zinc-800 font-sans antialiased min-h-screen overflow-x-hidden relative">
 
+  <!-- SCROLL PROGRESS BAR -->
   <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-emerald-600 z-50 transition-all duration-100" style="width: 0%"></div>
 
+  <!-- FIXED DESKTOP NAVBAR -->
   <header class="hidden md:flex fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-zinc-100 z-40 py-5 justify-center items-center">
     <div class="max-w-275 w-full px-6 flex justify-between items-center">
       <a href="#" class="text-xl font-bold tracking-wider text-zinc-900">NAZ<span class="text-emerald-600">.</span></a>
@@ -32,21 +34,14 @@
     </div>
   </header>
 
-  <nav class="md:hidden fixed bottom-10 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-zinc-200/80 rounded-full px-5 py-3 flex gap-4 items-center z-40 shadow-xl shadow-zinc-200/50 text-[11px] font-bold uppercase tracking-wider text-zinc-600 select-none">
-    <a href="#about" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">About</a>
-    <span class="w-px h-2.5 bg-zinc-200"></span>
-    <a href="#experience" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Experience</a>
-    <span class="w-px h-2.5 bg-zinc-200"></span>
-    <a href="#projects" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Projects</a>
-    <span class="w-px h-2.5 bg-zinc-200"></span>
-    <a href="#contact" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Contact</a>
-  </nav>
+  <!-- MAIN WRAPPER -->
+  <main class="max-w-275 mx-auto px-6 space-y-20 md:space-y-32 pt-0 md:pt-12">
 
-  <main class="max-w-275 mx-auto px-6 space-y-20 md:space-y-32 pt-12">
-
-    <section id="about" class="pt-20 md:pt-40 pb-4 space-y-12 scroll-reveal">
+    <!-- ABOUT SECTION (Mobile padding adjusted perfectly to pt-15) -->
+    <section id="about" class="pt-15 md:pt-40 pb-4 space-y-12 scroll-reveal">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
+        <!-- Left Profile Column -->
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 md:gap-8 w-full lg:col-span-7">
           <div class="relative w-40 h-40 md:w-44 md:h-44 shrink-0 mx-auto sm:mx-0">
             <div class="w-full h-full rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center overflow-hidden shadow-sm">
@@ -78,9 +73,11 @@
           </div>
         </div>
 
+        <!-- Right Column: BENTO BOX -->
         <div class="w-full lg:col-span-5 scroll-reveal delay-100">
           <div class="bg-zinc-50/60 border border-zinc-200/80 rounded-2xl shadow-sm backdrop-blur-sm overflow-hidden">
             
+            <!-- Metadata Location & Clock -->
             <div class="grid grid-cols-2 gap-4 text-xs p-5 border-b border-zinc-200/60">
               <div class="flex items-center gap-2 text-zinc-600">
                 <i data-lucide="map-pin" class="w-3.5 h-3.5 text-zinc-400"></i>
@@ -92,6 +89,7 @@
               </div>
             </div>
 
+            <!-- Core Tech Grid -->
             <div class="p-5">
               <div class="grid grid-cols-4 gap-2.5 select-none">
                 <div class="flex flex-col items-center justify-center text-center p-2 rounded-xl bg-white border border-zinc-200/60 hover:border-emerald-500/50 transition-colors duration-150 group/tech">
@@ -150,6 +148,7 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE SECTION -->
     <section id="experience" class="space-y-8 scroll-reveal">
       <div class="flex justify-between items-end">
         <div>
@@ -221,6 +220,7 @@
       </div>
     </section>
 
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="space-y-8 scroll-reveal">
       <div>
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900">Featured Projects</h2>
@@ -268,7 +268,8 @@
       </div>
     </section>
 
-    <section id="contact" class="grid grid-cols-1 md:grid-cols-2 gap-12 pb-32 scroll-reveal">
+    <!-- CONTACT SECTION (Acts as a clean space cushion at the bottom of the viewport) -->
+    <section id="contact" class="grid grid-cols-1 md:grid-cols-2 gap-12 pb-44 md:pb-32 scroll-reveal">
       
       <div class="space-y-6">
         <div class="space-y-3">
@@ -291,6 +292,7 @@
         </div>
       </div>
 
+      <!-- Right Column: Recruitment Card -->
       <div class="flex items-center">
         <a href="mailto:mhnasrulloh.work@gmail.com" class="w-full bg-zinc-50 border border-zinc-200 hover:border-emerald-500/40 p-8 rounded-2xl flex flex-col justify-between items-start gap-5 group transition-all duration-300 active:scale-[0.99] shadow-sm">
           
@@ -323,10 +325,18 @@
 
   </main>
 
-  <footer class="bg-zinc-50 pt-10 pb-28 md:py-10 text-center text-xs text-zinc-500 border-t border-zinc-200/60 flex items-center justify-center gap-1.5 font-medium">
-    &copy; 2026 Naz Dev. With Love <i data-lucide="heart" class="w-3.5 h-3.5 text-emerald-600 fill-emerald-600 inline animate-pulse"></i>
-  </footer>
+  <!-- FLOATING MOBILE NAVIGATION BAR -->
+  <nav class="md:hidden fixed bottom-10 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-zinc-200/80 rounded-full px-5 py-3 flex gap-4 items-center z-50 shadow-xl shadow-zinc-200/50 text-[11px] font-bold uppercase tracking-wider text-zinc-600 select-none">
+    <a href="#about" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">About</a>
+    <span class="w-px h-2.5 bg-zinc-200"></span>
+    <a href="#experience" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Experience</a>
+    <span class="w-px h-2.5 bg-zinc-200"></span>
+    <a href="#projects" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Projects</a>
+    <span class="w-px h-2.5 bg-zinc-200"></span>
+    <a href="#contact" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Contact</a>
+  </nav>
 
+  <!-- LIGHTBOX MODAL -->
   <div id="lightbox-modal" class="fixed inset-0 bg-white/95 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300 opacity-0 select-none">
     <button id="lightbox-close" class="absolute top-6 right-6 p-2 text-zinc-500 hover:text-zinc-900 transition-colors cursor-pointer" aria-label="Close Lightbox">
       <i data-lucide="x" class="w-8 h-8"></i>
