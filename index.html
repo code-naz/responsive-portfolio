@@ -18,8 +18,8 @@
 </head>
 <body class="bg-white text-zinc-800 font-sans antialiased min-h-screen overflow-x-hidden relative">
 
-  <!-- SCROLL PROGRESS BAR -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-emerald-600 z-50 transition-all duration-100" style="width: 0%"></div>
+  <!-- SLIMMED STANDARD SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-0.5 bg-emerald-600 z-50 transition-all duration-100" style="width: 0%"></div>
 
   <!-- FIXED DESKTOP NAVBAR -->
   <header class="hidden md:flex fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-zinc-100 z-40 py-5 justify-center items-center">
@@ -34,14 +34,14 @@
     </div>
   </header>
 
-  <!-- MAIN WRAPPER -->
+  <!-- MAIN WRAPPER (Strict 275 grid utility alignment) -->
   <main class="max-w-275 mx-auto px-6 space-y-20 md:space-y-32 pt-0 md:pt-12">
 
     <!-- HERO SECTION -->
     <section id="about" class="pt-12 md:pt-24 pb-4 scroll-reveal">
       <div class="w-full space-y-12">
         
-        <!-- Top Row Container: Profile and Content Text Column Side-by-Side -->
+        <!-- Top Row Container: Profile on Left, Text content on Right -->
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-12 w-full">
           
           <!-- Left Side: Circular Profile Image Frame -->
@@ -69,18 +69,19 @@
 
             <h1 class="text-4xl font-black text-zinc-900 tracking-tight leading-none">Hi everyone!</h1>
             
-            <!-- Professional Role String Layout -->
+            <!-- Professional Role Inline Layout Container -->
             <div class="text-zinc-600 text-base md:text-lg leading-relaxed font-normal">
               <p>
                 I'm Nasrul. A <span id="typewriter" class="text-emerald-600 font-semibold border-r-2 border-emerald-600/80 pr-1 cursor-blink"></span>
               </p>
             </div>
 
-            <!-- Summary Text Paragraph (Constrained on mobile to max-w-xs to line up perfectly with the buttons) -->
+            <!-- Summary Text Paragraph -->
             <p class="text-zinc-600 text-sm md:text-base leading-relaxed max-w-xs sm:max-w-full mx-auto sm:mx-0 pt-1 text-justify sm:text-left">
               Passionate about software development (web/apps) by designing intuitive and user-friendly UI/UX. Also interested in data analysis, uncovering new insights useful for individual or corporate growth.
             </p>
             
+            <!-- Call to Actions Container Row -->
             <div class="flex flex-row justify-center sm:justify-start gap-3 items-center w-full max-w-xs sm:max-w-none mx-auto pt-2">
               <a href="#experience" class="flex-1 sm:flex-initial border border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-5 py-2.5 rounded-xl font-semibold text-xs inline-flex items-center justify-center gap-2 group select-none active:scale-95 transition-all duration-150 whitespace-nowrap">
                 View Work
@@ -107,12 +108,13 @@
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Experience</h2>
       </div>
 
-      <!-- Carousel Container Wrapper -->
+      <!-- Carousel Container Wrapper Box -->
       <div class="relative w-full">
         
         <div class="overflow-hidden w-full rounded-2xl border border-zinc-200 bg-zinc-50/30">
           <div id="carousel-track" class="flex transition-transform duration-500 ease-out will-change-transform">
             
+            <!-- Slide 1 -->
             <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
               <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
                   <img src="assets/images/apple-dev.jpg" alt="Apple Developer Academy" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -129,6 +131,7 @@
               </div>
             </div>
 
+            <!-- Slide 2 -->
             <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
               <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
                   <img src="assets/images/satriamuda.jpg" alt="Satria Muda Review" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -145,6 +148,7 @@
               </div>
             </div>
 
+            <!-- Slide 3 -->
             <div class="w-full shrink-0 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
               <div class="w-full md:w-1/3 aspect-video bg-white border border-zinc-200 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden cursor-zoom-in">
                 <img src="assets/images/sre-gid.jpg" alt="SRE Telkom University" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
@@ -164,12 +168,12 @@
           </div>
         </div>
 
-        <!-- Single Unified Overlay Arrow Controller Component -->
-        <div class="absolute -right-2 lg:translate-x-1/2 top-1/2 -translate-y-1/2 z-10 flex flex-row items-center bg-white border border-zinc-200 rounded-xl shadow-md overflow-hidden divide-x divide-zinc-100">
-          <button id="prev-slide" class="p-3 text-zinc-500 hover:text-emerald-600 hover:bg-zinc-50/50 transition-all cursor-pointer active:scale-95" aria-label="Previous Slide">
+        <!-- Overlapping Right Edge Absolute Navigation Controllers -->
+        <div class="absolute right-0 lg:translate-x-1/2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center p-2">
+          <button id="prev-slide" class="hidden p-3 bg-white border border-zinc-200 rounded-xl text-zinc-500 hover:text-emerald-600 transition-all cursor-pointer active:scale-95 shadow-md" aria-label="Previous Slide">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
           </button>
-          <button id="next-slide" class="p-3 text-zinc-500 hover:text-emerald-600 hover:bg-zinc-50/50 transition-all cursor-pointer active:scale-95" aria-label="Next Slide">
+          <button id="next-slide" class="p-3 bg-white border border-zinc-200 rounded-xl text-zinc-500 hover:text-emerald-600 transition-all cursor-pointer active:scale-95 shadow-md" aria-label="Next Slide">
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
         </div>
@@ -248,7 +252,7 @@
               <span class="text-xs font-bold">Instagram</span>
             </a>
 
-            <a href="https://linkedin.com/in/mh-nasrulloh" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group shrink-0">
+            <a href="https://linkedin.com/in/mh-nasrulloh" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-3.5 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-emerald-600 transition-colors"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
               <span class="text-xs font-bold">LinkedIn</span>
             </a>
@@ -265,7 +269,6 @@
         <!-- Right Column: Recruitment Card -->
         <div class="flex items-center">
           <a href="mailto:mhnasrulloh.work@gmail.com" class="w-full bg-zinc-50 border border-zinc-200 hover:border-emerald-500/40 p-8 rounded-2xl flex flex-col justify-between items-start gap-5 group transition-all duration-300 active:scale-[0.99] shadow-sm">
-            
             <div class="flex items-center gap-2.5">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -275,11 +278,9 @@
                 Ready for Work/Internship
               </span>
             </div>
-
             <p class="text-zinc-600 text-xs sm:text-sm leading-relaxed max-w-md">
               Open to roles across Software Development, UI/UX Design, Data Analyst, and Product Management. Excited to grow and contribute.
             </p>
-
             <div class="w-full border-t border-zinc-200/80 pt-4 flex justify-between items-center">
               <p class="text-sm font-bold text-zinc-900 group-hover:text-emerald-600 transition-colors">
                 Send an Email Message
@@ -288,7 +289,6 @@
                 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
               </div>
             </div>
-
           </a>
         </div>
       </div>
@@ -318,5 +318,52 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- REFACTORED CAROUSEL SCRIPT WITH DYNAMIC SINGLE ACTIVE NAVIGATION CONTROLLER -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("carousel-track");
+      const prevBtn = document.getElementById("prev-slide");
+      const nextBtn = document.getElementById("next-slide");
+      
+      if (!track || !prevBtn || !nextBtn) return;
+      
+      const slides = Array.from(track.children);
+      let currentIndex = 0;
+
+      function updateCarouselState() {
+        // Move the carousel slide track
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Strict single button conditional filter rule
+        if (currentIndex === slides.length - 1) {
+          // At the last image slide: switch exclusively to Previous action button
+          prevBtn.classList.remove("hidden");
+          nextBtn.classList.add("hidden");
+        } else {
+          // On all slides preceding the last view: display Next action button exclusively
+          prevBtn.classList.add("hidden");
+          nextBtn.classList.remove("hidden");
+        }
+      }
+
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex < slides.length - 1) {
+          currentIndex++;
+          updateCarouselState();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarouselState();
+        }
+      });
+
+      // Fire initial state presentation filter
+      updateCarouselState();
+    });
+  </script>
 </body>
 </html>
