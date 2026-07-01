@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* 1. Responsive Global Scroll Configurations */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem; 
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 6.5rem; 
+  }
+}
+
+/* 2. Typewriter Smooth Cursor Blink Keyframes */
+@keyframes cursorBlink {
+  50% { border-color: transparent; }
+}
+
+.cursor-blink {
+  animation: cursorBlink 0.75s step-end infinite;
+}
+
+/* 3. Hardware-Accelerated Scroll Reveal Styles */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility Micro-Delays for Sequential Grid Triggers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
