@@ -210,7 +210,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 9. Core Theme Toggling System (Icon & Custom Toggle Switch Trackers)
+  // 9. Manual Active/Inactive Boundary Logic Carousel Pagination Handling
+  const carouselTrack = document.getElementById("carousel-track");
+  const prevBtn = document.getElementById("carousel-prev-btn");
+  const nextBtn = document.getElementById("carousel-next-btn");
+  
+  if (carouselTrack && prevBtn && nextBtn) {
+    const updateCarouselButtons = () => {
+      const scrollLeft = carouselTrack.scrollLeft;
+      const maxScrollLeft = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+      
+      if (scrollLeft <= 5) {
+        prevBtn.disabled = true;
+        prevBtn.classList.add("opacity-30", "pointer-events-none");
+      } else {
+        prevBtn.disabled = false;
+        prevBtn.classList.remove("opacity-30", "pointer-events-none");
+      }
+      
+      if (scrollLeft >= maxScrollLeft - 5) {
+        nextBtn.disabled = true;
+        nextBtn.classList.add("opacity-30", "pointer-events-none");
+      } else {
+        nextBtn.disabled = false;
+        nextBtn.classList.remove("opacity-30", "pointer-events-none");
+      }
+    };
+
+    carouselTrack.addEventListener("scroll", updateCarouselButtons);
+    window.addEventListener("resize", updateCarouselButtons);
+    
+    prevBtn.addEventListener("click", () => {
+      carouselTrack.scrollBy({ left: -carouselTrack.clientWidth, behavior: "smooth" });
+    });
+    nextBtn.addEventListener("click", () => {
+      carouselTrack.scrollBy({ left: carouselTrack.clientWidth, behavior: "smooth" });
+    });
+
+    setTimeout(updateCarouselButtons, 50);
+  }
+
+  // 10. Core Theme Toggling System (Icon & Custom Toggle Switch Trackers)
   const desktopThemeBtn = document.getElementById("desktop-theme-btn");
   const mobileThemeBtn = document.getElementById("mobile-theme-btn");
   const desktopThemeIcon = document.getElementById("desktop-theme-icon");
