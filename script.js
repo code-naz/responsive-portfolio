@@ -250,13 +250,16 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(updateCarouselButtons, 50);
   }
 
-  // 10. Core Theme Toggling System (Icon & Custom Toggle Switch Trackers)
+  // 10. Core Theme Toggling System with Smartphone Status Bar Alignment
   const desktopThemeBtn = document.getElementById("desktop-theme-btn");
   const mobileThemeBtn = document.getElementById("mobile-theme-btn");
   const desktopThemeIcon = document.getElementById("desktop-theme-icon");
   const toggleSlider = document.getElementById("toggle-slider");
 
   const syncThemeUI = (isDark) => {
+    // Select the head meta tag to rewrite browser UI styles on smartphones dynamically
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    
     if (isDark) {
       document.body.classList.add("dark-mode");
       if (desktopThemeIcon) desktopThemeIcon.className = "ri-sun-line text-lg";
@@ -267,6 +270,8 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleSlider.classList.remove("translate-x-0");
         toggleSlider.classList.add("translate-x-5");
       }
+      // Paint mobile browser status bars dark
+      if (themeMeta) themeMeta.setAttribute("content", "#09090b");
     } else {
       document.body.classList.remove("dark-mode");
       if (desktopThemeIcon) desktopThemeIcon.className = "ri-moon-clear-line text-lg";
@@ -277,6 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleSlider.classList.remove("translate-x-5");
         toggleSlider.classList.add("translate-x-0");
       }
+      // Revert mobile browser status bars back to crisp white
+      if (themeMeta) themeMeta.setAttribute("content", "#ffffff");
     }
   };
 

@@ -90,8 +90,8 @@
       color: #059669 !important;
     }
 
-    /* Dark Mode Bottom Sheet Typography & Icon Overrides */
-    body.dark-mode #bottom-sheet span,
+    /* Dark Mode Bottom Sheet Typography & Selective Icon Overrides */
+    body.dark-mode #bottom-sheet span:not(.text-emerald-600),
     body.dark-mode #bottom-sheet i,
     body.dark-mode #close-sheet-btn i {
       color: #ffffff !important;
@@ -208,7 +208,6 @@
     </section>
 
     <section id="experience" class="space-y-8">
-      <!-- Clean Title with Dashed Underline Border -->
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-zinc-100 border-b border-dashed border-zinc-400 dark:border-zinc-500 pb-2 inline-block">Experience</h2>
       </div>
@@ -278,7 +277,6 @@
     </section>
 
     <section id="projects" class="space-y-8">
-      <!-- Clean Title with Dashed Underline Border -->
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-zinc-100 border-b border-dashed border-zinc-400 dark:border-zinc-500 pb-2 inline-block">Featured Projects</h2>
       </div>
@@ -328,8 +326,7 @@
       </div>
     </section>
 
-    <section id="contact" class="space-y-8 pb-24">
-      <!-- Clean Title with Dashed Underline Border -->
+    <section id="contact" class="space-y-8 pb-32">
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-zinc-100 border-b border-dashed border-zinc-400 dark:border-zinc-500 pb-2 inline-block">Let's Connect</h2>
       </div>
@@ -349,7 +346,6 @@
         </div>
         
         <div class="flex flex-col justify-between gap-4 max-w-md w-full">
-          <!-- Text Justified Layout Optimization rule -->
           <p class="text-zinc-600 text-sm leading-relaxed text-justify sm:text-left">
             Whether you are looking for developing software, interfaces, or data analysis, I'm here to help you turn your vision into reality. Let's create something meaningful together.
           </p>
@@ -375,8 +371,7 @@
     </section>
   </main>
 
-  <!-- Slim, Elevated Compact Mobile Bottom Navbar -->
-  <nav id="mobile-navbar" class="md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 w-80 bg-white/95 backdrop-blur-xl border border-zinc-200/80 rounded-full px-6 py-1.5 flex items-center justify-center gap-11 z-50 text-zinc-500 select-none shadow-xl">
+  <nav id="mobile-navbar" class="md:hidden fixed bottom-9 left-1/2 -translate-x-1/2 w-80 bg-white/95 backdrop-blur-xl border border-zinc-200/80 rounded-full px-6 py-1.5 flex items-center justify-center gap-11 z-50 text-zinc-500 select-none shadow-xl">
     <a href="#about" class="nav-item-container active-state flex items-center justify-center p-1.5 transition-all duration-200" aria-label="Home">
       <i class="ri-home-5-line text-xl"></i>
     </a>
@@ -391,10 +386,9 @@
     </a>
   </nav>
 
-  <!-- Custom Detached Floating Bottom Sheet Matching Navbar Bounds -->
   <div id="bottom-sheet" class="md:hidden fixed bottom-24 left-1/2 -translate-x-1/2 w-80 bg-white border border-zinc-200/80 rounded-2xl shadow-2xl z-50 transform translate-y-full opacity-0 invisible transition-all duration-300 ease-out p-5 pb-6">
     <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-100">
-      <span class="text-lg font-bold tracking-wider text-zinc-900">NAZ<span class="text-emerald-600">.</span></span>
+      <span class="text-xl font-bold tracking-wider text-zinc-900">NAZ<span class="text-emerald-600 font-bold">.</span></span>
       <button id="close-sheet-btn" class="text-zinc-400 hover:text-zinc-900 active:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 p-1 flex items-center justify-center" aria-label="Close Menu">
         <i class="ri-close-line text-xl"></i>
       </button>
