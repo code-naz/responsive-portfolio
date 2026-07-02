@@ -157,16 +157,18 @@
 
   <main class="max-w-275 mx-auto px-6 space-y-20 md:space-y-32 pt-0 md:pt-12">
 
+    <!-- Redesigned About Section with Bold Profile Presence -->
     <section id="about" class="pt-12 md:pt-24 pb-4 scroll-reveal">
       <div class="w-full space-y-12">
-        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-12 w-full">
-          <div class="relative w-40 h-40 md:w-44 md:h-44 shrink-0">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-14 w-full">
+          <!-- Expanded Profile Frame for a Full and Compact Screen Footprint -->
+          <div class="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 shrink-0">
             <div class="w-full h-full rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center overflow-hidden shadow-sm">
               <img src="assets/images/profile.jpg" alt="Naz" class="w-full h-full object-cover">
             </div>
           </div>
 
-          <div class="space-y-5 text-center sm:text-left grow w-full">
+          <div class="space-y-5 text-center sm:text-left grow w-full pt-2">
             <div class="flex items-center justify-center sm:justify-start gap-3.5 text-xs text-zinc-500 font-medium tracking-wide select-none">
               <div class="flex items-center gap-1.5">
                 <i class="ri-map-pin-line text-zinc-400 text-sm"></i>
@@ -179,11 +181,15 @@
               </div>
             </div>
 
-            <h1 class="text-4xl font-black text-zinc-900 tracking-tight leading-none">Hi everyone!</h1>
+            <!-- Custom Branded Heading Setup -->
+            <h1 class="text-4xl font-black text-zinc-900 tracking-tight leading-none flex items-center justify-center sm:justify-start gap-2">
+              Hi, I'm Nasrul <i class="ri-emotion-happy-line text-emerald-600 font-normal"></i>
+            </h1>
             
-            <div class="text-zinc-600 text-base md:text-lg leading-relaxed font-normal">
+            <!-- Typewriter Row containing exclusively the dynamic wrapper span -->
+            <div class="text-zinc-600 text-base md:text-lg leading-relaxed font-normal min-h-7">
               <p>
-                I'm Nasrul. A <span id="typewriter" class="text-emerald-600 font-semibold border-r-2 border-emerald-600/80 pr-1 cursor-blink"></span>
+                <span id="typewriter" class="text-emerald-600 font-semibold border-r-2 border-emerald-600/80 pr-1 cursor-blink"></span>
               </p>
             </div>
 
@@ -192,7 +198,8 @@
             </p>
             
             <div class="flex flex-row justify-center sm:justify-start gap-3 items-center w-full max-w-xs sm:max-w-none mx-auto pt-2">
-              <a href="#experience" class="flex-1 sm:flex-initial border border-emerald-600 text-emerald-600 hover:bg-emerald-50 h-10 px-5 rounded-xl font-semibold text-xs inline-flex items-center justify-center gap-2 group select-none active:scale-95 transition-all duration-150 whitespace-nowrap box-border">
+              <!-- Clear Background Variant for View Work with No Hover Fill Overlays -->
+              <a href="#experience" class="flex-1 sm:flex-initial border border-emerald-600 text-emerald-600 h-10 px-5 rounded-xl font-semibold text-xs inline-flex items-center justify-center gap-2 group select-none active:scale-95 transition-all duration-150 whitespace-nowrap box-border bg-transparent">
                 View Work
                 <i class="ri-arrow-right-line group-hover:translate-x-1 transition-transform duration-200"></i>
               </a>
@@ -371,6 +378,7 @@
     </section>
   </main>
 
+  <!-- Navigation Bar Capsule configured to custom fixed bottom-9 level bounds -->
   <nav id="mobile-navbar" class="md:hidden fixed bottom-9 left-1/2 -translate-x-1/2 w-80 bg-white/95 backdrop-blur-xl border border-zinc-200/80 rounded-full px-6 py-1.5 flex items-center justify-center gap-11 z-50 text-zinc-500 select-none shadow-xl">
     <a href="#about" class="nav-item-container active-state flex items-center justify-center p-1.5 transition-all duration-200" aria-label="Home">
       <i class="ri-home-5-line text-xl"></i>
@@ -386,7 +394,8 @@
     </a>
   </nav>
 
-  <div id="bottom-sheet" class="md:hidden fixed bottom-24 left-1/2 -translate-x-1/2 w-80 bg-white border border-zinc-200/80 rounded-2xl shadow-2xl z-50 transform translate-y-full opacity-0 invisible transition-all duration-300 ease-out p-5 pb-6">
+  <!-- Detached Floating Bottom Sheet explicitly indexed to rest seamlessly above bottom-9 layout bars -->
+  <div id="bottom-sheet" class="md:hidden fixed bottom-23 left-1/2 -translate-x-1/2 w-80 bg-white border border-zinc-200/80 rounded-2xl shadow-2xl z-50 transform translate-y-full opacity-0 invisible transition-all duration-300 ease-out p-5 pb-6">
     <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-100">
       <span class="text-xl font-bold tracking-wider text-zinc-900">NAZ<span class="text-emerald-600 font-bold">.</span></span>
       <button id="close-sheet-btn" class="text-zinc-400 hover:text-zinc-900 active:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 p-1 flex items-center justify-center" aria-label="Close Menu">

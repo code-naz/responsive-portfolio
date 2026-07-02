@@ -257,7 +257,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleSlider = document.getElementById("toggle-slider");
 
   const syncThemeUI = (isDark) => {
-    // Select the head meta tag to rewrite browser UI styles on smartphones dynamically
     const themeMeta = document.querySelector('meta[name="theme-color"]');
     
     if (isDark) {
@@ -270,7 +269,6 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleSlider.classList.remove("translate-x-0");
         toggleSlider.classList.add("translate-x-5");
       }
-      // Paint mobile browser status bars dark
       if (themeMeta) themeMeta.setAttribute("content", "#09090b");
     } else {
       document.body.classList.remove("dark-mode");
@@ -282,7 +280,6 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleSlider.classList.remove("translate-x-5");
         toggleSlider.classList.add("translate-x-0");
       }
-      // Revert mobile browser status bars back to crisp white
       if (themeMeta) themeMeta.setAttribute("content", "#ffffff");
     }
   };
