@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff">
   
   <title>Naz Dev</title>
@@ -12,8 +12,8 @@
   <link rel="shortcut icon" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
 
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="dist/output.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
   
   <style>
     /* Clean utility helper to hide visual scrollbars during native swiping */
@@ -23,6 +23,75 @@
     .no-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
+    }
+
+    /* Hardware-accelerated smooth dark mode transition overlay rules */
+    body {
+      transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.dark-mode {
+      background-color: #09090b !important;
+      color: #e4e4e7 !important;
+    }
+    body.dark-mode header,
+    body.dark-mode nav,
+    body.dark-mode #bottom-sheet {
+      background-color: #121214 !important;
+      border-color: rgba(63, 63, 70, 0.4) !important;
+      color: #f4f4f5 !important;
+    }
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode a:not(.mobile-sheet-link),
+    body.dark-mode #desktop-theme-btn,
+    body.dark-mode #desktop-theme-btn i {
+      color: #ffffff !important;
+    }
+    body.dark-mode p,
+    body.dark-mode span,
+    body.dark-mode .text-zinc-600 {
+      color: #a1a1aa !important;
+    }
+    body.dark-mode .bg-zinc-50,
+    body.dark-mode .bg-zinc-50\/30,
+    body.dark-mode .bg-white,
+    body.dark-mode #carousel-track > div {
+      background-color: #141417 !important;
+      border-color: #27272a !important;
+    }
+    body.dark-mode .border-zinc-200,
+    body.dark-mode .border-zinc-100 {
+      border-color: #27272a !important;
+    }
+    body.dark-mode .mobile-sheet-link {
+      color: #e4e4e7 !important;
+      border-color: #27272a !important;
+      background-color: #18181b !important;
+    }
+    body.dark-mode .mobile-sheet-link:active {
+      background-color: #27272a !important;
+    }
+
+    /* Standard Interactive Desktop Links Override */
+    body.dark-mode header nav a:hover {
+      color: #10b981 !important;
+    }
+
+    /* Standardized state management transitions for icons */
+    .nav-item-container i {
+      color: #71717a;
+      transition: color 0.2s ease;
+    }
+    .nav-item-container:hover i {
+      color: #10b981;
+    }
+    .nav-item-container.active-state i {
+      color: #10b981 !important;
+    }
+    body.dark-mode .nav-item-container.active-state i {
+      color: #34d399 !important;
     }
   </style>
 </head>
@@ -38,6 +107,9 @@
         <a href="#experience" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Experience</a>
         <a href="#projects" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Projects</a>
         <a href="#contact" class="hover:text-emerald-600 active:text-emerald-600 transition-colors">Contact</a>
+        <button id="desktop-theme-btn" class="transition-colors cursor-pointer ml-2 text-zinc-600" aria-label="Toggle Theme">
+          <i id="desktop-theme-icon" class="ri-moon-clear-line text-lg"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -46,9 +118,7 @@
 
     <section id="about" class="pt-12 md:pt-24 pb-4 scroll-reveal">
       <div class="w-full space-y-12">
-        
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-12 w-full">
-          
           <div class="relative w-40 h-40 md:w-44 md:h-44 shrink-0">
             <div class="w-full h-full rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center overflow-hidden shadow-sm">
               <img src="assets/images/profile.jpg" alt="Naz" class="w-full h-full object-cover">
@@ -56,15 +126,14 @@
           </div>
 
           <div class="space-y-5 text-center sm:text-left grow w-full">
-            
             <div class="flex items-center justify-center sm:justify-start gap-3.5 text-xs text-zinc-500 font-medium tracking-wide select-none">
               <div class="flex items-center gap-1.5">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-zinc-400"></i>
+                <i class="ri-map-pin-line text-zinc-400 text-sm"></i>
                 <span>Indonesia</span>
               </div>
               <span class="w-px h-3 bg-zinc-200"></span>
               <div class="font-mono flex items-center gap-1.5">
-                <i data-lucide="clock" class="w-3.5 h-3.5 text-zinc-400"></i>
+                <i class="ri-time-line text-zinc-400 text-sm"></i>
                 <span id="dashboard-clock">00:00:00 WIB</span>
               </div>
             </div>
@@ -84,29 +153,25 @@
             <div class="flex flex-row justify-center sm:justify-start gap-3 items-center w-full max-w-xs sm:max-w-none mx-auto pt-2">
               <a href="#experience" class="flex-1 sm:flex-initial border border-emerald-600 text-emerald-600 hover:bg-emerald-50 px-5 py-2.5 rounded-xl font-semibold text-xs inline-flex items-center justify-center gap-2 group select-none active:scale-95 transition-all duration-150 whitespace-nowrap">
                 View Work
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200"></i>
+                <i class="ri-arrow-right-line group-hover:translate-x-1 transition-transform duration-200"></i>
               </a>
               
               <a href="assets/My Resume.pdf" download class="flex-1 sm:flex-initial bg-emerald-600 text-white hover:bg-emerald-700 px-5 py-2.5 rounded-xl font-bold text-xs inline-flex items-center justify-center gap-2 select-none active:scale-95 transition-all duration-150 shadow-md shadow-emerald-600/10 whitespace-nowrap">
                 My Resume
-                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <i class="ri-download-cloud-2-line text-base"></i>
               </a>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
 
     <section id="experience" class="space-y-8">
-      
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Experience</h2>
       </div>
 
       <div class="relative w-full overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50/30 p-0">
-        
         <div id="carousel-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar w-full pb-10">
           
           <div class="w-full shrink-0 snap-start p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center group">
@@ -164,7 +229,6 @@
           <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 transition-all duration-300 select-none"></span>
           <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 transition-all duration-300 select-none"></span>
         </div>
-
       </div>
     </section>
 
@@ -174,7 +238,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
         <a href="https://xuexi-hanzi.vercel.app" target="_blank" class="bg-white border border-zinc-200 rounded-2xl overflow-hidden group hover:border-emerald-500/40 hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 flex flex-col justify-between">
           <div class="p-5 space-y-2">
             <h3 class="text-lg font-semibold text-zinc-900 group-hover:text-emerald-600 transition-colors duration-200">Xuexi Hanzi</h3>
@@ -220,13 +283,11 @@
     </section>
 
     <section id="contact" class="space-y-8 pb-32">
-      
       <div class="flex flex-col items-center text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-zinc-900 border-b-2 border-emerald-500 pb-2 inline-block">Let's Connect</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 items-stretch">
-        
         <div class="border border-emerald-600 rounded-2xl p-6 md:p-8 flex flex-col justify-center gap-4 bg-emerald-50/5 shadow-sm">
           <div class="flex flex-row items-center gap-2.5 select-none justify-center sm:justify-start">
             <span class="relative flex h-2.5 w-2.5 shrink-0">
@@ -253,60 +314,61 @@
           </div>
           
           <div class="grid grid-cols-3 gap-2 w-full max-w-md mx-auto sm:mx-0 py-1">
-            
             <a href="https://linkedin.com/in/mh-nasrulloh" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-2 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group w-full text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-emerald-600 transition-colors shrink-0"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              <i class="ri-linkedin-line text-zinc-400 group-hover:text-emerald-600 text-lg transition-colors shrink-0"></i>
               <span class="text-xs font-bold truncate">LinkedIn</span>
             </a>
 
             <a href="https://wa.me/6285701816674" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-2 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group w-full text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24" class="text-zinc-400 group-hover:text-emerald-600 transition-colors shrink-0">
-                <path d="M12.004 2c-5.518 0-10 4.482-10 10 0 1.761.461 3.415 1.266 4.861L2 22l5.312-1.393c1.411.77 3.012 1.21 4.692 1.21 5.518 0 10-4.482 10-10s-4.482-10-10-10zm.004 18c-1.539 0-2.99-.413-4.25-1.135l-.304-.173-3.153.827.84-3.076-.19-.303c-.79-1.258-1.213-2.722-1.213-4.24 0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.646-6.425c-.254-.127-1.503-.742-1.737-.827-.234-.085-.405-.127-.576.128-.171.254-.66.827-.808.996-.149.17-.297.19-.551.063-.254-.127-1.074-.396-2.046-1.264-.756-.674-1.266-1.508-1.414-1.762-.149-.254-.016-.391.111-.517.114-.114.254-.297.381-.445.127-.149.17-.254.254-.424.085-.17.042-.318-.021-.445-.064-.127-.576-1.393-.789-1.906-.207-.5-.421-.433-.576-.441-.149-.007-.32-.009-.491-.009-.171 0-.449.064-.684.318-.234.254-.897.877-.897 2.14 0 1.263.918 2.482 1.046 2.652.128.17 1.808 2.761 4.379 3.869.612.264 1.09.421 1.462.539.614.196 1.173.168 1.614.103.492-.072 1.503-.615 1.716-1.209.213-.593.213-1.102.149-1.208-.064-.107-.234-.149-.488-.277z"/>
-              </svg>
+              <i class="ri-whatsapp-line text-zinc-400 group-hover:text-emerald-600 text-lg transition-colors shrink-0"></i>
               <span class="text-xs font-bold truncate">WhatsApp</span>
             </a>
 
             <a href="mailto:mhnasrulloh.work@gmail.com" class="flex items-center justify-center gap-2 px-2 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-700 hover:text-emerald-600 hover:border-emerald-500/40 transition-all duration-200 select-none group w-full text-center">
-              <i data-lucide="mail" class="w-3.5 h-3.5 text-zinc-400 remove-hover group-hover:text-emerald-600 transition-colors shrink-0"></i>
+              <i class="ri-mail-line text-zinc-400 group-hover:text-emerald-600 text-lg transition-colors shrink-0"></i>
               <span class="text-xs font-bold truncate">Email</span>
             </a>
-
           </div>
         </div>
-
       </div>
     </section>
-
   </main>
 
-  <nav class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-xl border-t border-zinc-200/80 pt-3 pb-2.5 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] text-zinc-600 select-none">
-    <div class="max-w-275 mx-auto flex justify-center items-center gap-4 w-full">
-      <a href="#about" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-14" aria-label="Home">
-        <i data-lucide="home" class="w-5 h-5"></i>
-        <span class="text-[10px] font-medium mt-1 tracking-wide">Home</span>
+  <nav id="mobile-navbar" class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-72.5 bg-white/95 backdrop-blur-xl border border-zinc-200/80 rounded-full px-6 py-3 flex items-center justify-center gap-8 z-50 text-zinc-500 select-none shadow-none">
+    <a href="#about" class="nav-item-container active-state flex items-center justify-center p-1.5 transition-all duration-200" aria-label="Home">
+      <i class="ri-home-5-line text-xl"></i>
+    </a>
+    <button id="mobile-menu-btn" class="nav-item-container flex items-center justify-center p-1.5 cursor-pointer bg-transparent border-0 text-zinc-500 transition-all duration-200" aria-label="Menu">
+      <i class="ri-apps-2-line text-xl"></i>
+    </button>
+    <button id="mobile-theme-btn" class="nav-item-container flex items-center justify-center p-1.5 cursor-pointer bg-transparent border-0 text-zinc-500 transition-all duration-200" aria-label="Toggle Theme">
+      <i id="mobile-theme-icon" class="ri-moon-clear-line text-xl"></i>
+    </button>
+  </nav>
+
+  <div id="bottom-sheet" class="md:hidden fixed bottom-24 left-1/2 -translate-x-1/2 w-72.5 bg-white border border-zinc-200/80 rounded-2xl shadow-xl z-50 transform translate-y-full opacity-0 invisible transition-all duration-300 ease-out p-4">
+    <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-100">
+      <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">List Menu</span>
+      <button id="close-sheet-btn" class="text-xs font-bold text-zinc-400 hover:text-zinc-900 active:text-zinc-900 transition-colors cursor-pointer bg-transparent border-0 p-1" aria-label="Close Menu">Close ✕</button>
+    </div>
+    <div class="grid grid-cols-2 gap-2 w-full">
+      <a href="#experience" class="mobile-sheet-link block py-3 px-3 border border-zinc-200 rounded-xl text-center text-xs font-bold tracking-wide text-zinc-700 bg-zinc-50/20 active:bg-zinc-100 transition-all duration-150">
+        Experience
       </a>
-      <a href="#experience" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-16" aria-label="Experience">
-        <i data-lucide="briefcase-business" class="w-5 h-5"></i>
-        <span class="text-[10px] font-medium mt-1 tracking-wide">Experience</span>
+      <a href="#projects" class="mobile-sheet-link block py-3 px-3 border border-zinc-200 rounded-xl text-center text-xs font-bold tracking-wide text-zinc-700 bg-zinc-50/20 active:bg-zinc-100 transition-all duration-150">
+        Projects
       </a>
-      <a href="#projects" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-14" aria-label="Projects">
-        <i data-lucide="search" class="w-5 h-5"></i>
-        <span class="text-[10px] font-medium mt-1 tracking-wide">Projects</span>
-      </a>
-      <a href="#contact" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-14" aria-label="Contact">
-        <i data-lucide="phone" class="w-5 h-5"></i>
-        <span class="text-[10px] font-medium mt-1 tracking-wide">Contact</span>
-      </a>
-      <a href="#" id="back-to-top-btn" class="hover:text-emerald-600 transition-colors flex flex-col items-center justify-center p-1 w-12" aria-label="Back to top">
-        <i data-lucide="chevrons-up" class="w-5 h-5"></i>
-        <span class="text-[10px] font-medium mt-1 tracking-wide">Top</span>
+      <a href="#contact" class="mobile-sheet-link col-span-2 block py-3 px-3 border border-zinc-200 rounded-xl text-center text-xs font-bold tracking-wide text-zinc-700 bg-zinc-50/20 active:bg-zinc-100 transition-all duration-150">
+        Contact
       </a>
     </div>
-  </nav>
+  </div>
+
+  <div id="bottom-sheet-overlay" class="md:hidden fixed inset-0 bg-black/10 backdrop-blur-xs z-40 hidden opacity-0 transition-opacity duration-300"></div>
 
   <div id="lightbox-modal" class="fixed inset-0 bg-white/95 backdrop-blur-md z-50 hidden items-center justify-center p-4 transition-all duration-300 opacity-0 select-none">
     <button id="lightbox-close" class="absolute top-6 right-6 p-2 text-zinc-500 hover:text-zinc-900 transition-colors cursor-pointer" aria-label="Close Lightbox">
-      <i data-lucide="x" class="w-8 h-8"></i>
+      <i class="ri-close-line text-3xl"></i>
     </button>
     <div class="relative max-w-4xl max-h-[85vh] overflow-hidden rounded-xl border border-zinc-200 shadow-2xl bg-white">
       <img id="lightbox-img" src="" alt="Enlarged Experience View" class="w-full h-full object-contain max-h-[85vh]">
@@ -314,38 +376,5 @@
   </div>
 
   <script src="script.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const track = document.getElementById("carousel-track");
-      const dotsContainer = document.getElementById("carousel-dots");
-      
-      if (!track || !dotsContainer) return;
-      
-      const dots = Array.from(dotsContainer.children);
-      const totalSlides = dots.length;
-
-      function syncCarouselState() {
-        const scrollLeft = track.scrollLeft;
-        const slideWidth = track.clientWidth || track.offsetWidth;
-        if (slideWidth <= 0) return;
-        
-        const activeIndex = Math.min(Math.round(scrollLeft / slideWidth), totalSlides - 1);
-
-        dots.forEach((dot, idx) => {
-          if (idx === activeIndex) {
-            dot.className = "w-2 h-2 rounded-full bg-emerald-600 transition-all duration-300 select-none";
-          } else {
-            dot.className = "w-1.5 h-1.5 rounded-full bg-zinc-300 transition-all duration-300 select-none";
-          }
-        });
-      }
-
-      track.addEventListener("scroll", syncCarouselState);
-      window.addEventListener("resize", syncCarouselState);
-      
-      syncCarouselState();
-    });
-  </script>
 </body>
 </html>

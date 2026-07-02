@@ -10,11 +10,7 @@ window.addEventListener('beforeunload', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Ensure top scroll injection holds after DOM elements finish rendering
   window.scrollTo(0, 0);
-
-  // Initialize Lucide Icons
-  lucide.createIcons();
 
   // 2. Scroll Progress Bar Engine Logic
   const progressLine = document.getElementById("scroll-progress");
@@ -27,57 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Carousel Component Structural Control Logic with Hard Boundaries
-  const carouselTrack = document.getElementById("carousel-track");
-  const prevBtn = document.getElementById("prev-slide");
-  const nextBtn = document.getElementById("next-slide");
-  
-  if (carouselTrack && prevBtn && nextBtn) {
-    const slides = Array.from(carouselTrack.children);
-    let currentIndex = 0;
-
-    const updateButtonsState = () => {
-      if (currentIndex === 0) {
-        prevBtn.disabled = true;
-        prevBtn.classList.add("opacity-30", "pointer-events-none");
-      } else {
-        prevBtn.disabled = false;
-        prevBtn.classList.remove("opacity-30", "pointer-events-none");
-      }
-
-      if (currentIndex === slides.length - 1) {
-        nextBtn.disabled = true;
-        nextBtn.classList.add("opacity-30", "pointer-events-none");
-      } else {
-        nextBtn.disabled = false;
-        nextBtn.classList.remove("opacity-30", "pointer-events-none");
-      }
-    };
-
-    const updateSlidePosition = () => {
-      carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-      updateButtonsState();
-    };
-
-    nextBtn.addEventListener("click", () => {
-      if (currentIndex < slides.length - 1) {
-        currentIndex++;
-        updateSlidePosition();
-      }
-    });
-
-    prevBtn.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlidePosition();
-      }
-    });
-
-    window.addEventListener("resize", updateSlidePosition);
-    updateButtonsState();
-  }
-
-  // 4. Lightbox Image Modal Control Logic
+  // 3. Lightbox Image Modal Control Logic
   const experienceImages = document.querySelectorAll("#experience img");
   const lightboxModal = document.getElementById("lightbox-modal");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -118,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 5. Typewriter Effect Logic
+  // 4. Typewriter Effect Logic
   const words = ["Developer", "UI/UX Designer", "Software and Data Enthusiast"];
   let wordIndex = 0;
   let charIndex = 0;
@@ -156,12 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
   }
 
-  // 6. Live Dashboard Clock Logic (Forced 24-Hour & Strict Colon Separators)
+  // 5. Live Dashboard Clock Logic
   const clockElement = document.getElementById("dashboard-clock");
   if (clockElement) {
     const updateClock = () => {
       const now = new Date();
-      
       const parts = new Intl.DateTimeFormat("en-US", {
         timeZone: "Asia/Jakarta",
         hour: "2-digit",
@@ -181,13 +126,13 @@ document.addEventListener("DOMContentLoaded", () => {
     updateClock(); 
   }
 
-  // 7. Native Scroll Animation Reveal Controller
+  // 6. Native Scroll Animation Reveal Controller
   const animatedElements = document.querySelectorAll('.scroll-reveal');
   const animationObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        observer.unobserve(entry.target); 
+        observer.unobserve(entry.target);
       }
     });
   }, {
@@ -197,12 +142,117 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animatedElements.forEach(el => animationObserver.observe(el));
 
-  // 8. Back-to-Top Interaction Logic
-  const backToTopBtn = document.getElementById("back-to-top-btn");
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  // 7. Core Navigation Active State Engine Logic
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const closeSheetBtn = document.getElementById("close-sheet-btn");
+  const bottomSheet = document.getElementById("bottom-sheet");
+  const bottomSheetOverlay = document.getElementById("bottom-sheet-overlay");
+  const mobileSheetLinks = document.querySelectorAll(".mobile-sheet-link");
+  const navItemContainers = document.querySelectorAll(".nav-item-container");
+
+  const clearNavActiveStates = () => {
+    navItemContainers.forEach(el => el.classList.remove("active-state"));
+  };
+
+  if (mobileMenuBtn && bottomSheet && bottomSheetOverlay) {
+    const openBottomSheet = () => {
+      bottomSheetOverlay.classList.remove("hidden");
+      setTimeout(() => {
+        bottomSheetOverlay.classList.add("opacity-100");
+        bottomSheet.classList.remove("translate-y-full", "opacity-0", "invisible");
+        bottomSheet.classList.add("translate-y-0", "opacity-100", "visible");
+        clearNavActiveStates();
+        mobileMenuBtn.classList.add("active-state");
+      }, 10);
+    };
+
+    const closeBottomSheet = () => {
+      bottomSheetOverlay.classList.remove("opacity-100");
+      bottomSheet.classList.remove("translate-y-0", "opacity-100", "visible");
+      bottomSheet.classList.add("translate-y-full", "opacity-0", "invisible");
+      setTimeout(() => {
+        bottomSheetOverlay.classList.add("hidden");
+        clearNavActiveStates();
+        const aboutLink = document.querySelector('a[href="#about"]');
+        if (aboutLink) aboutLink.classList.add("active-state");
+      }, 300);
+    };
+
+    mobileMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isClosed = bottomSheet.classList.contains("invisible");
+      if (isClosed) {
+        openBottomSheet();
+      } else {
+        closeBottomSheet();
+      }
+    });
+
+    if (closeSheetBtn) closeSheetBtn.addEventListener("click", closeBottomSheet);
+    bottomSheetOverlay.addEventListener("click", closeBottomSheet);
+
+    mobileSheetLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        closeBottomSheet();
+      });
     });
   }
+
+  // 8. Desktop / Tab Navigation Active Anchor Handlers
+  document.querySelectorAll('a.nav-item-container').forEach(anchorLink => {
+    anchorLink.addEventListener("click", () => {
+      if (bottomSheet) {
+        bottomSheet.classList.add("translate-y-full", "opacity-0", "invisible");
+        if (bottomSheetOverlay) bottomSheetOverlay.classList.add("hidden");
+      }
+      clearNavActiveStates();
+      anchorLink.classList.add("active-state");
+    });
+  });
+
+  // 9. Core Theme Toggling System (Icon State Tracker)
+  const desktopThemeBtn = document.getElementById("desktop-theme-btn");
+  const mobileThemeBtn = document.getElementById("mobile-theme-btn");
+  const desktopThemeIcon = document.getElementById("desktop-theme-icon");
+  const mobileThemeIcon = document.getElementById("mobile-theme-icon");
+
+  const syncThemeUI = (isDark) => {
+    if (isDark) {
+      document.body.classList.add("dark-mode");
+      if (desktopThemeIcon) desktopThemeIcon.className = "ri-sun-line text-lg";
+      if (mobileThemeIcon) mobileThemeIcon.className = "ri-sun-line text-xl";
+    } else {
+      document.body.classList.remove("dark-mode");
+      if (desktopThemeIcon) desktopThemeIcon.className = "ri-moon-clear-line text-lg";
+      if (mobileThemeIcon) mobileThemeIcon.className = "ri-moon-clear-line text-xl";
+    }
+  };
+
+  let currentThemeState = localStorage.getItem("portfolio-theme") === "dark";
+  syncThemeUI(currentThemeState);
+
+  const toggleThemeState = (e) => {
+    e.preventDefault();
+    currentThemeState = !currentThemeState;
+    localStorage.setItem("portfolio-theme", currentThemeState ? "dark" : "light");
+    syncThemeUI(currentThemeState);
+    
+    if (e.currentTarget === mobileThemeBtn) {
+      clearNavActiveStates();
+      mobileThemeBtn.classList.add("active-state");
+      setTimeout(() => {
+        mobileThemeBtn.classList.remove("active-state");
+        const isSheetOpen = bottomSheet && !bottomSheet.classList.contains("invisible");
+        if (!isSheetOpen) {
+          const aboutLink = document.querySelector('a[href="#about"]');
+          if (aboutLink) aboutLink.classList.add("active-state");
+        } else {
+          mobileMenuBtn.classList.add("active-state");
+        }
+      }, 400);
+    }
+  };
+
+  if (desktopThemeBtn) desktopThemeBtn.addEventListener("click", toggleThemeState);
+  if (mobileThemeBtn) mobileThemeBtn.addEventListener("click", toggleThemeState);
 });
