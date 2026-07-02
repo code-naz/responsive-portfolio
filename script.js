@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 8. Desktop / Tab Navigation Active Anchor Handlers
+  // 8. Desktop / Mobile App View Anchor Active Switch Engine
   document.querySelectorAll('a.nav-item-container').forEach(anchorLink => {
     anchorLink.addEventListener("click", () => {
       if (bottomSheet) {
@@ -210,21 +210,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 9. Core Theme Toggling System (Icon State Tracker)
+  // 9. Core Theme Toggling System (Icon & Custom Toggle Switch Trackers)
   const desktopThemeBtn = document.getElementById("desktop-theme-btn");
   const mobileThemeBtn = document.getElementById("mobile-theme-btn");
   const desktopThemeIcon = document.getElementById("desktop-theme-icon");
-  const mobileThemeIcon = document.getElementById("mobile-theme-icon");
+  const toggleSlider = document.getElementById("toggle-slider");
 
   const syncThemeUI = (isDark) => {
     if (isDark) {
       document.body.classList.add("dark-mode");
       if (desktopThemeIcon) desktopThemeIcon.className = "ri-sun-line text-lg";
-      if (mobileThemeIcon) mobileThemeIcon.className = "ri-sun-line text-xl";
+      if (mobileThemeBtn) {
+        mobileThemeBtn.setAttribute("aria-checked", "true");
+      }
+      if (toggleSlider) {
+        toggleSlider.classList.remove("translate-x-0");
+        toggleSlider.classList.add("translate-x-5");
+      }
     } else {
       document.body.classList.remove("dark-mode");
       if (desktopThemeIcon) desktopThemeIcon.className = "ri-moon-clear-line text-lg";
-      if (mobileThemeIcon) mobileThemeIcon.className = "ri-moon-clear-line text-xl";
+      if (mobileThemeBtn) {
+        mobileThemeBtn.setAttribute("aria-checked", "false");
+      }
+      if (toggleSlider) {
+        toggleSlider.classList.remove("translate-x-5");
+        toggleSlider.classList.add("translate-x-0");
+      }
     }
   };
 
@@ -236,21 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
     currentThemeState = !currentThemeState;
     localStorage.setItem("portfolio-theme", currentThemeState ? "dark" : "light");
     syncThemeUI(currentThemeState);
-    
-    if (e.currentTarget === mobileThemeBtn) {
-      clearNavActiveStates();
-      mobileThemeBtn.classList.add("active-state");
-      setTimeout(() => {
-        mobileThemeBtn.classList.remove("active-state");
-        const isSheetOpen = bottomSheet && !bottomSheet.classList.contains("invisible");
-        if (!isSheetOpen) {
-          const aboutLink = document.querySelector('a[href="#about"]');
-          if (aboutLink) aboutLink.classList.add("active-state");
-        } else {
-          mobileMenuBtn.classList.add("active-state");
-        }
-      }, 400);
-    }
   };
 
   if (desktopThemeBtn) desktopThemeBtn.addEventListener("click", toggleThemeState);
